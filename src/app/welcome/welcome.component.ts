@@ -37,9 +37,16 @@ export class WelcomeComponent implements OnInit {
       selectedPrank,
       selectedCandy
     )
-    console.log(this.player.costume);
-    console.log(this.player.prank);
-    console.log(this.player.candy);
+  }
+
+  makeChoice(direction) {
+    if (direction === 1){
+      this.player.location += 1;
+    } else {
+      this.player.location += 6;
+    }
+    console.log(this.player.location);
+    return this.player.location
   }
 
 }
