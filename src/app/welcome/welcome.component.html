@@ -8,39 +8,45 @@
     </div>
     <div class="costume">
       <h4>Halloween Costume:</h4>
-      <select #selectedCostume required>
-        <option [value]="ghost">ghost</option>
-        <option [value]="witch">witch</option>
-        <option [value]="devil">devil</option>
-        <option [value]="cowboy">cowboy</option>
-        <option [value]="princess">princess</option>
-        <option [value]="blackCat">black cat</option>
-        <option [value]="pirate">pirate</option>
+      <select #selectedCostume>
+        <option [ngValue]="ghost">ghost</option>
+        <option [ngValue]="witch">witch</option>
+        <option [ngValue]="devil">devil</option>
+        <option [ngValue]="cowboy">cowboy</option>
+        <option [ngValue]="princess">princess</option>
+        <option [ngValue]="blackCat">black cat</option>
+        <option [ngValue]="pirate">pirate</option>
       </select>
     </div>
     <div class="prank">
       <h4>Favorite Prank:</h4>
-      <select #selectedPrank required>
-        <option [value]="eggHouse">egg house</option>
-        <option [value]="tpHouse">toilet paper house</option>
-        <option [value]="dingDongDitch">ding dong ditching</option>
-        <option [value]="sillyString">silly string car</option>
-        <option [value]="soapWindows">soap windows</option>
+      <select #selectedPrank>
+        <option [ngValue]="eggHouse">egg the house</option>
+        <option [ngValue]="tpHouse">toilet paper the house</option>
+        <option [ngValue]="dingDongDitch">ding dong ditch</option>
+        <option [ngValue]="sillyString">silly string the car</option>
+        <option [ngValue]="soapWindows">soap the windows</option>
       </select>
     </div>
     <div class="candyFavorite">
       <h4>Favorite Candy:</h4>
-      <select #selectedCandy required>
-        <option [value]="candyCorn">candy corn</option>
-        <option [value]="caramelApple">caramel apple</option>
-        <option [value]="candyCigarettes">candy cigarettes</option>
-        <option [value]="blackLicorice">black licorice</option>
-        <option [value]="candyPumpkins">candy pumpkins</option>
+      <select #selectedCandy>
+        <option [ngValue]="candyCorn">candy corn</option>
+        <option [ngValue]="caramelApple">caramel apple</option>
+        <option [ngValue]="candyCigarettes">candy cigarettes</option>
+        <option [ngValue]="blackLicorice">black licorice</option>
+        <option [ngValue]="candyPumpkins">candy pumpkins</option>
       </select>
-
     </div>
-
-
+    <button (click)="getValueFromSelect(newName.value, selectedCostume.value, selectedPrank.value, selectedCandy.value)">click me!</button>
   </form>
+  <hr>
+  <div *ngIf="player" class="game-start">
+    <h3>Hi {{player.name}}, Let's go Trick or Treating!</h3>
+    <p>You are standing on a suburban street dressed as a {{player.costume}}. You can't wait to get out there and get some {{player.candy}}! And if anyone disappoints you, you can always {{player.prank}}. There is a house to your left and another to the right. Which do you visit?</p>
+    <button id="left" class="btn" name="button">Go left</button>
+    <button id="right" class="btn" name="button">Go right</button>
+  </div>
+
 
 </div>

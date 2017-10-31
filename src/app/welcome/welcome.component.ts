@@ -30,4 +30,16 @@ export class WelcomeComponent implements OnInit {
     // this.player = this.playerService.getPlayer();
   }
 
+  getValueFromSelect(newName: string, selectedCostume: string, selectedPrank: string, selectedCandy: string) {
+    this.player = new Player(
+      newName,
+      selectedCostume,
+      selectedPrank,
+      selectedCandy
+    )
+    console.log(this.player.costume);
+    console.log(this.player.prank);
+    console.log(this.player.candy);
+  }
+
 }
