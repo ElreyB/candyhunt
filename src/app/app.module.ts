@@ -8,13 +8,15 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { routing } from  './app.routing';
 import { SuccessComponent } from './success/success.component';
 import { GameOverComponent } from './game-over/game-over.component';
+import { HouseComponent } from './house/house.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     SuccessComponent,
-    GameOverComponent
+    GameOverComponent,
+    HouseComponent
   ],
   imports: [
     BrowserModule,
