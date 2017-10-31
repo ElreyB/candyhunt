@@ -10,8 +10,5 @@ export const STORYLINE: Storyline[] = [
   new Storyline('The tiny house with blue trim sits back from the street between two towering maple trees. You can spot the dark outline of an owl high in the branches, which will explains all the hooting. Decorative spiderwebs are strung from the lowest branches framing a basketball-sized paper-mache spider.', ['candy corn', 'caramel apple', 'candy cigarette', 'black licorice', 'candy pumpkin', 'caramel apple'], 7),
   new Storyline('Walking toward the gaudily painted house, you glance around the overgrown grass of the yard looking for the source of the skunk smell. A VW Bus with handdrawn flowers speckling its doors sits in the driveway. On the pine needle strewn porch, you see a large pottery bowl filled with candy and a sign that reads "Please take one."', [], 8),
   new Storyline('You jerk open the rusted gate at the front of the abandoned Frieberg place. The once majestic home of the late doctor has fallen into disrepair. Rumor is that his grandchildren have inherited the place, but no one has met them in the neighborhood. Clearly they do not invest their time in house upkeep.', [], 9),
-  new Storyline('Just beyond the cast-iron gate, you walk past an elaborate paper-mache cemetary with jaunty skeletons suspended from the trees. You can just make out the "Monster Mash" being broadcast from within the party house. Through the large front window, you see adults in costumes bobbing for apples awkwardly.', ['candy corn', 'caramel apple', 'candy cigarette', 'black licorice', 'candy pumpkin', 'candy pumpkin'], 10),
-  new Storyline(),
-  new Storyline(),
-
-]
+  new Storyline('Just beyond the cast-iron gate, you walk past an elaborate paper-mache cemetary with jaunty skeletons suspended from the trees. You can just make out the "Monster Mash" being broadcast from within the party house. Through the large front window, you see adults in costumes bobbing for apples awkwardly.', ['candy corn', 'caramel apple', 'candy cigarette', 'black licorice', 'candy pumpkin', 'candy pumpkin'], 10),              
+];
