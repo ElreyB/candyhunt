@@ -2,12 +2,45 @@
 <p>Time to hunt for candy! It's Halloween and you are out trick or treating. Your goal is to return home with as much candy as possible. Beware! There are bullies and abandoned houses and dentists in your neighborhood. Be clever and have fun with the rest of the ghoulies out tonight!</p>
 <div class="container">
   <form class="characteristics">
-    <label for="name">Your name:</label>
-    <input class="name form-control" #newName name="name" type="text">
+    <div class="name">
+      <label for="name">Your name:</label>
+      <input class="name form-control" #newName name="name" type="text">
+    </div>
+    <div class="costume">
+      <h4>Halloween Costume:</h4>
+      <select #selectedCostume required>
+        <option [value]="ghost">ghost</option>
+        <option [value]="witch">witch</option>
+        <option [value]="devil">devil</option>
+        <option [value]="cowboy">cowboy</option>
+        <option [value]="princess">princess</option>
+        <option [value]="blackCat">black cat</option>
+        <option [value]="pirate">pirate</option>
+      </select>
+    </div>
+    <div class="prank">
+      <h4>Favorite Prank:</h4>
+      <select #selectedPrank required>
+        <option [value]="eggHouse">egg house</option>
+        <option [value]="tpHouse">toilet paper house</option>
+        <option [value]="dingDongDitch">ding dong ditching</option>
+        <option [value]="sillyString">silly string car</option>
+        <option [value]="soapWindows">soap windows</option>
+      </select>
+    </div>
+    <div class="candyFavorite">
+      <h4>Favorite Candy:</h4>
+      <select #selectedCandy required>
+        <option [value]="candyCorn">candy corn</option>
+        <option [value]="caramelApple">caramel apple</option>
+        <option [value]="candyCigarettes">candy cigarettes</option>
+        <option [value]="blackLicorice">black licorice</option>
+        <option [value]="candyPumpkins">candy pumpkins</option>
+      </select>
 
-    <select [(ngModel)]="costumes" required>
-      <option *ngFor="let costume of costumes" [ngValue]="costumes">{{costumes}}</option>
-    </select>
+    </div>
+
+
   </form>
 
 </div>

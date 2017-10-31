@@ -7,6 +7,10 @@ export class PlayerService {
   constructor() {
   }
 
+  setPlayer() {
+
+  }
+
   getPlayer() {
     return this.player;
   }
