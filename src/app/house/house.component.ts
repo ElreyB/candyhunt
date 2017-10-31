@@ -16,8 +16,9 @@ import { StorylineService } from '../storyline.service';
 export class HouseComponent implements OnInit {
   sub;
   player: Player;
-  storyline: Storyline;
+  storylineToDisplay: Storyline;
   storylineId: number;
+  prankOrRing: string;
 
   constructor(
     private router: Router,
@@ -31,8 +32,28 @@ export class HouseComponent implements OnInit {
     this.player = this.playerService.getPlayer();
     this.sub = this.route.params.subscribe(params => {
       this.storylineId = params['id'];
-      this.storyline = this.storylineService.getStorylineById(this.storylineId);
+      // this.storyline = this.storylineService.getStorylineById(this.storylineId);
     });
+    this.storylineToDisplay = this.storylineService.getStorylineById(this.storylineId);
+  }
+
+  makeChoice(direction) {
+    if (direction === 1){
+      this.player.location += 1;
+    } else {
+      this.player.location += 6;
+    }
+    console.log(this.player.location);
+    return this.player.location
+  }
+
+  trickOrTreat(choice){
+    if(choice === "trick"){
+      this.prankOrRing = "prank";
+    } else {
+      this.prankOrRing = "ringBell";
+    }
+
   }
 
 }

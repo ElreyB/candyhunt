@@ -23,11 +23,12 @@ export class WelcomeComponent implements OnInit {
 
   constructor(
     private playerService: PlayerService,
-    private storylineService: StorylineService
+    private storylineService: StorylineService,
+    private router: Router
   ) { }
 
   ngOnInit() {
-    // this.player = this.playerService.getPlayer();
+    // this.storyline = this.storylineService.getStorylineById();
   }
 
   getValueFromSelect(newName: string, selectedCostume: string, selectedPrank: string, selectedCandy: string) {
@@ -47,6 +48,10 @@ export class WelcomeComponent implements OnInit {
     }
     console.log(this.player.location);
     return this.player.location
+  }
+
+  goToNextHouse(clickedButton: Storyline) {
+    this.router.navigate(['house', this.player.location]);
   }
 
 }
