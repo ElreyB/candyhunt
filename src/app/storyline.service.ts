@@ -11,8 +11,8 @@ export class StorylineService {
     return STORYLINE;
   }
 
-  getStorylineById(storylineId: number){
-    for (var i = 0; i <= STORYLINE.length -1; i++) {
+  getStorylineById(storylineId: number) {
+    for (let i = 0; i <= STORYLINE.length - 1; i++) {
       if (STORYLINE[i].id === storylineId) {
         return STORYLINE[i];
       }

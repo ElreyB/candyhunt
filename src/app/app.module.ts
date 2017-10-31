@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { routing } from  './app.routing';
+import { routing } from './app.routing';
 import { SuccessComponent } from './success/success.component';
 import { GameOverComponent } from './game-over/game-over.component';
 import { HouseComponent } from './house/house.component';

@@ -32,7 +32,7 @@ export class HouseComponent implements OnInit {
     this.sub = this.route.params.subscribe(params => {
       this.storylineId = params['id'];
       this.storyline = this.storylineService.getStorylineById(this.storylineId);
-    })
+    });
   }
 
 }

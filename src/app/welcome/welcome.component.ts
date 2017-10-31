@@ -6,6 +6,8 @@ import { Storyline } from '../storyline.model';
 import { STORYLINE } from '../mock-storyline';
 import { PlayerService } from '../player.service';
 import { StorylineService } from '../storyline.service';
+import { COSTUMES, PRANKS, CANDY } from '../mock-characteristics';
+
 
 @Component({
   selector: 'app-welcome',
@@ -14,10 +16,10 @@ import { StorylineService } from '../storyline.service';
   providers: [PlayerService, StorylineService]
 })
 export class WelcomeComponent implements OnInit {
-  sub;
   player: Player;
   storyline: Storyline[];
   storylineId: number;
+  costumes: string[];
 
   constructor(
     private playerService: PlayerService,
@@ -25,7 +27,7 @@ export class WelcomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.player = this.playerService.getPlayer();
+    // this.player = this.playerService.getPlayer();
   }
 
 }
