@@ -65,6 +65,9 @@ export class HouseComponent implements OnInit {
 
   trickOrTreat(choice) {
     this.prankOrRing = choice;
+    if (this.prankOrRing === 'ring') {
+      this.storylineToDisplay.candy.
+    }
   }
 
   walk() {
