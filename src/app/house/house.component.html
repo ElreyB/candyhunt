@@ -6,6 +6,13 @@
 <button id="left" (click)='trickOrTreat("ring")' class="btn" name="button">{{storylineToDisplay.choiceA}}</button>
 <button id="right" (click)='trickOrTreat("prank")' class="btn" name="button">{{storylineToDisplay.choiceB}}</button>
 
-<div *ngIf="prankOrRing">
+<div *ngIf="prankOrRing == 'prank'">
   <p>{{player.prank}}</p>
+  <button id="left" (click)="makeChoice(1)" class="btn" name="button">Go left</button>
+  <button id="right" (click)="makeChoice(0)" class="btn" name="button">Go right</button>
+</div>
+<div *ngIf="prankOrRing == 'ring'">
+  <p>Collect one candy!</p>
+  <button id="left" (click)="makeChoice(1)" class="btn" name="button">Go left</button>
+  <button id="right" (click)="makeChoice(0)" class="btn" name="button">Go right</button>
 </div>

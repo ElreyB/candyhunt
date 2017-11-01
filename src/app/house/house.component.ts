@@ -38,7 +38,7 @@ export class HouseComponent implements OnInit {
     this.storylineToDisplay = this.storylineService.getStorylineById(
       this.storylineId
     );
-    console.log(this.playerService.getPlayer());
+    console.log(this.storylineToDisplay);
   }
 
   makeChoice(direction) {
@@ -47,7 +47,13 @@ export class HouseComponent implements OnInit {
     } else {
       this.player.location += 6;
     }
-    return this.player.location;
+    this.router.navigate(["house", this.player.location]);
+    this.sub = this.route.params.subscribe(params => {
+      this.storylineId = params["id"];
+    });
+    this.storylineToDisplay = this.storylineService.getStorylineById(
+      this.storylineId
+    );
   }
 
   trickOrTreat(choice) {
