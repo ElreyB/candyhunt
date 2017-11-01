@@ -11,7 +11,7 @@ import { StorylineService } from "../storyline.service";
   selector: "app-house",
   templateUrl: "./house.component.html",
   styleUrls: ["./house.component.css"],
-  providers: [PlayerService, StorylineService]
+  providers: [StorylineService]
 })
 export class HouseComponent implements OnInit {
   sub;
@@ -38,7 +38,7 @@ export class HouseComponent implements OnInit {
     this.storylineToDisplay = this.storylineService.getStorylineById(
       this.storylineId
     );
-    console.log(this.storylineToDisplay);
+    console.log(this.playerService.getPlayer());
   }
 
   makeChoice(direction) {
@@ -51,10 +51,6 @@ export class HouseComponent implements OnInit {
   }
 
   trickOrTreat(choice) {
-    if (choice == "trick") {
-      this.prankOrRing = "prank";
-    } else {
-      this.prankOrRing = "ringBell";
-    }
+    this.prankOrRing = choice;
   }
 }

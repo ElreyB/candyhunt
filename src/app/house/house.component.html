@@ -1,5 +1,11 @@
-<h2>The Next House on the Block</h2>
+<h2>The Next House on the Block
+  <small>{{player.candyCount}} </small>
+</h2>
 <p>{{storylineToDisplay.description}}</p>
 <p></p>
-<button id="left" (click)="trickOrTreat" class="btn" name="button">{{storylineToDisplay.choiceA}}</button>
-<button id="right" (click)="trickOrTreat" class="btn" name="button">{{storylineToDisplay.choiceB}}</button>
+<button id="left" (click)='trickOrTreat("ring")' class="btn" name="button">{{storylineToDisplay.choiceA}}</button>
+<button id="right" (click)='trickOrTreat("prank")' class="btn" name="button">{{storylineToDisplay.choiceB}}</button>
+
+<div *ngIf="prankOrRing">
+  <p>{{player.prank}}</p>
+</div>

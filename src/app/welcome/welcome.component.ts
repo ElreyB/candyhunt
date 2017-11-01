@@ -12,7 +12,7 @@ import { COSTUMES, PRANKS, CANDY } from "../mock-characteristics";
   selector: "app-welcome",
   templateUrl: "./welcome.component.html",
   styleUrls: ["./welcome.component.css"],
-  providers: [PlayerService, StorylineService]
+  providers: [StorylineService]
 })
 export class WelcomeComponent implements OnInit {
   player: Player;
@@ -26,9 +26,7 @@ export class WelcomeComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit() {
-    // this.storyline = this.storylineService.getStorylineById();
-  }
+  ngOnInit() {}
 
   getValueFromSelect(
     newName: string,
@@ -42,6 +40,8 @@ export class WelcomeComponent implements OnInit {
       selectedPrank,
       selectedCandy
     );
+    this.playerService.setPlayer(this.player);
+    this.player = this.playerService.getPlayer();
   }
 
   makeChoice(direction) {
@@ -50,7 +50,6 @@ export class WelcomeComponent implements OnInit {
     } else {
       this.player.location += 6;
     }
-    console.log(this.player.location);
     this.router.navigate(["house", this.player.location]);
   }
 }
