@@ -8,11 +8,11 @@
 
 <div *ngIf="prankOrRing == 'prank'">
   <p>{{player.prank}}</p>
-  <button id="left" (click)="makeChoice(1)" class="btn" name="button">Go left</button>
-  <button id="right" (click)="makeChoice(0)" class="btn" name="button">Go right</button>
+  <button (click)="makeHouseChoice('left')" class="btn left" name="button">Go left</button>
+  <button (click)="makeHouseChoice('right')" class="btn right" name="button">Go right</button>
 </div>
 <div *ngIf="prankOrRing == 'ring'">
   <p>Collect one candy!</p>
-  <button id="left" (click)="makeChoice(1)" class="btn" name="button">Go left</button>
-  <button id="right" (click)="makeChoice(0)" class="btn" name="button">Go right</button>
+  <button (click)="makeHouseChoice('left')" class="btn left" name="button">Go left</button>
+  <button (click)="makeHouseChoice('right')" class="btn right" name="button">Go right</button>
 </div>

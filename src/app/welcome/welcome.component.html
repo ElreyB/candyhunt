@@ -1,5 +1,7 @@
 <h2>It's Halloween!!!!</h2>
-<p>Time to hunt for candy! It's Halloween and you are out trick or treating. Your goal is to return home with as much candy as possible. Beware! There are bullies and abandoned houses and dentists in your neighborhood. Be clever and have fun with the rest of the ghoulies out tonight!</p>
+<p>Time to hunt for candy! It's Halloween and you are out trick or treating. Your goal is to return home with as much candy
+  as possible. Beware! There are bullies and abandoned houses and dentists in your neighborhood. Be clever and have fun with
+  the rest of the ghoulies out tonight!</p>
 <div class="container">
   <form class="characteristics">
     <div class="name">
@@ -43,9 +45,11 @@
   <hr>
   <div *ngIf="player" class="game-start">
     <h3>Hi {{player.name}}, Let's go Trick or Treating!</h3>
-    <p>You are standing on a suburban street dressed as a {{player.costume}}. You can't wait to get out there and get some {{player.candy}}! And if anyone disappoints you, you can always {{player.prank}}. There is a house to your left and another to the right. Which do you visit?</p>
-    <button id="left" (click)="makeChoice(1)" class="btn" name="button">Go left</button>
-    <button id="right" (click)="makeChoice(0)" class="btn" name="button">Go right</button>
+    <p>You are standing on a suburban street dressed as a {{player.costume}}. You can't wait to get out there and get some {{player.candy}}!
+      And if anyone disappoints you, you can always {{player.prank}}. There is a house to your left and another to the right.
+      Which do you visit?</p>
+    <button id="left" (click)="makeChoice('left')" class="btn" name="button">Go left</button>
+    <button id="right" (click)="makeChoice('right')" class="btn" name="button">Go right</button>
   </div>
 
 

@@ -5,13 +5,13 @@ import { Player } from "../player.model";
 import { Storyline } from "../storyline.model";
 import { STORYLINE } from "../mock-storyline";
 import { PlayerService } from "../player.service";
-import { StorylineService } from "../storyline.service";
-import { COSTUMES, PRANKS, CANDY } from "../mock-characteristics";
+import { StorylineService } from '../storyline.service';
+import { COSTUMES, PRANKS, CANDY } from '../mock-characteristics';
 
 @Component({
-  selector: "app-welcome",
-  templateUrl: "./welcome.component.html",
-  styleUrls: ["./welcome.component.css"],
+  selector: 'app-welcome',
+  templateUrl: './welcome.component.html',
+  styleUrls: ['./welcome.component.css'],
   providers: [StorylineService]
 })
 export class WelcomeComponent implements OnInit {
@@ -45,11 +45,12 @@ export class WelcomeComponent implements OnInit {
   }
 
   makeChoice(direction) {
-    if (direction === 1) {
+    this.player.sideOfStreet = direction;
+    if (direction === 'left') {
       this.player.location += 1;
     } else {
       this.player.location += 6;
     }
-    this.router.navigate(["house", this.player.location]);
+    this.router.navigate(['house', this.player.location]);
   }
 }
