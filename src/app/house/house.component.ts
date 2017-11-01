@@ -9,8 +9,8 @@ import { StorylineService } from "../storyline.service";
 
 @Component({
   selector: "app-house",
-  templateUrl: './house.component.html',
-  styleUrls: ['./house.component.css'],
+  templateUrl: "./house.component.html",
+  styleUrls: ["./house.component.css"],
   providers: [StorylineService]
 })
 export class HouseComponent implements OnInit {
@@ -33,7 +33,7 @@ export class HouseComponent implements OnInit {
     this.storylines = this.storylineService.getStoryline();
     this.player = this.playerService.getPlayer();
     this.sub = this.route.params.subscribe(params => {
-      this.storylineId = params['id'];
+      this.storylineId = params["id"];
     });
     this.storylineToDisplay = this.storylineService.getStorylineById(
       this.storylineId
@@ -42,18 +42,21 @@ export class HouseComponent implements OnInit {
   }
 
   makeHouseChoice(direction) {
-    if (direction === 'left' && this.player.sideOfStreet === 'right') {
+    if (direction === "left" && this.player.sideOfStreet === "right") {
       this.player.sideOfStreet = direction;
       this.player.location -= 4;
-    } else if (direction === 'right' && this.player.sideOfStreet === 'left') {
+      this.walk();
+    } else if (direction === "right" && this.player.sideOfStreet === "left") {
       this.player.sideOfStreet = direction;
       this.player.location += 6;
+      this.walk();
     } else {
       this.player.location += 1;
+      this.walk();
     }
-    this.router.navigate(['house', this.player.location]);
+    this.router.navigate(["house", this.player.location]);
     this.sub = this.route.params.subscribe(params => {
-      this.storylineId = params['id'];
+      this.storylineId = params["id"];
     });
     this.storylineToDisplay = this.storylineService.getStorylineById(
       this.storylineId
@@ -62,5 +65,9 @@ export class HouseComponent implements OnInit {
 
   trickOrTreat(choice) {
     this.prankOrRing = choice;
+  }
+
+  walk() {
+    this.player.candyCount -= 1;
   }
 }
